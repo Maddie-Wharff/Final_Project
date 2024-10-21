@@ -1,1 +1,4 @@
-#Game by Elora and Maddie
+# by Elora and Maddie
+#Pick a word (us)
+#computer vs human
+#Check if letter is in word
