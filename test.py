@@ -1,35 +1,28 @@
-print("This is Hangman!\n_______\n O     |\n-|-    |\n ^     |\n____________")
-print("This is the word you need to guess!\n _ _ _ _ _ _ _ _ _ _ _")
-word = ["u", "n", "s", "t", "o", "p", "a", "b", "l", "e"]
+reveal = "_ _ _ _ _ _ _ _ _ _ _"
+print("This is Hangman!\n_______\n O     |\n-|-    |\n ^     |")
+print("This is the word you need to guess!\n", reveal)
   
 guess = input("Give me a letter: \n")
 
-reveal = "_ _ _ _ _ _ _ _ _ _ _"
-
-for let in word:
-    if guess == "u":
-        print("U is the first letter!")
-    elif guess == "n":
+if guess == "u":
+  print("U is the first letter!")
+elif guess == "n":
         print("N is the second letter!")
-    elif guess == "s":
+elif guess == "s":
         print("S is the thrid letter!")
-    elif guess == "t":
+elif guess == "t":
         print("T is the fourth letter!")
-    elif guess == "o":
+elif guess == "o":
         print("O is the fifth letter!")
-    elif guess == "p":
-        print("Yes it has a ", guess)
-
-
-
-
-
-
-
-
-name = input("enter a name ")
-namedos = input("enter a second name ")
-place = input("enter a place ")
-verb = input("enter a verb ")
-print(name + " and " + namedos + " went to " + place + " so they could " + verb + ".")
-
+elif guess == "p":
+        print("P is the sixth and seventh letter!")
+elif guess == "a":
+        print("A is the eighth letter!")
+elif guess == "b":
+        print("B is the ninth letter!")
+elif guess == "l":
+        print("L is the tenth letter!")
+elif guess == "e":
+        print("E is the eleventh letter!")
+else:
+        print("There are no", guess)
