@@ -1,39 +1,99 @@
-# by Elora and Maddie
+# By Elora, Maddie, Cephas, and Michael
 
+#extremely important things that I am adding!
+def gameEnd():
+        if wordGuess = word:
+                question = input(" Congratulations!\n you won!\n Would you like to restart?\n if so press y").strip().lower()
+                if question = "y":
+                        gameStart()
+                else:
+                        gameEnd
+        elif score = 6:
+                question = input(" Woops the word was {word}\n you lost.\n Would you like to restart?\n if so press y").strip().lower()
+                if question = "y":
+                        gameStart()
+                else:
+                        gameEnd
+        game()
+        
 # Pick a word - Both
-reveal = "_ _ _ _ _ _ _ _ _ _ _"
-print("This is Hangman!\n_______\n O     |\n-|-    |\n ^     |")
-print("This is the word you need to guess!\n", reveal)
+import random
+wordlist = ["camel", "pizza", "turkey", "moon", "dream", "cat", "sweet", "tooth", "company","baboon", "gym", "belief", "leaf", "beef", "the", "dog", "in" , "fox"]
+word = ""
+wordGuess = ""
+score = 0
+def gameStart():
+        global wordlist
+        global word
+        global wordGuess
+        score = 0
+        wordlist = ["camel", "pizza", "turkey", "moon", "dream", "cat", "sweet", "tooth", "company","baboon", "gym", "belief", "leaf", "beef", "the", "dog", "in" , "fox"]
+        word = random.choice(wordlist)
+        wordGuess = ""
+        game()
 
-# Let them pick a letter - Both
+
+# Let them pick a letter - All
 guess = input("Give me a letter: \n")
 
-# Check if letter is in word - Maddie
-if guess == "u":
-  print("U is the first letter!")
-elif guess == "n":
-        print("N is the second letter!")
-elif guess == "s":
-        print("S is the thrid letter!")
-elif guess == "t":
-        print("T is the fourth letter!")
-elif guess == "o":
-        print("O is the fifth letter!")
-elif guess == "p":
-        print("P is the sixth and seventh letter!")
-elif guess == "a":
-        print("A is the eighth letter!")
-elif guess == "b":
-        print("B is the ninth letter!")
-elif guess == "l":
-        print("L is the tenth letter!")
-elif guess == "e":
-        print("E is the eleventh letter!")
+# Check if letter is in word - Maddie    
+if guess in word:
+        print("Correct!")
 else:
-        print("There are no", guess)
+        print("Incorrect :(")
 
 # If they were wrong print a part of the man - Elora
 
-# When the whole man is there tell them they lose
+def hangman(): 
+        
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
 
-# If they get the word tell them that they win
+# End the game - Michael
