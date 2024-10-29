@@ -7,7 +7,7 @@ word = ""
 points = 0
 usedLetters = []
 displayWord=""
-#function to set everything to 0 - Cephas & Michael
+#function to set everything to 0 - Cephas and Michael
 def restart():
   global word
   global wordList
@@ -18,7 +18,7 @@ def restart():
   usedletters= []
   usedLetters.clear()
 restart()
-#function to let the user win - Cephas
+#functions to let the user win / lose - Cephas
 def winGame():
   print("Congrats you win!!!")
   winRestart = input("if you would like to restart press 1:")
@@ -27,7 +27,8 @@ def winGame():
     runGame()
   else:
     winGame()
-#function to let the user lose - Cephas
+
+
 def failGame():
   print("you have failed 6 times you are dead")
   failRestart = input("if you would like to restart press 2:")
@@ -43,8 +44,8 @@ def guess():
   if choice not in word:
     global points
     points += 1
-#make the gallows - Elora
-def gallows():
+#make the hangman - Elora
+def hangman():
   if points == 0:
     print("_______")
     print("      |")
@@ -105,20 +106,22 @@ def display():
   print(displayWord)
   if displayWord == word:
     winGame()
-#function to run game.-all \\\ call every function-all \\\plus some extra stuff! - Michael
+# function to run game.-Maddie and Elora
+# call every function - All
+# plus some extra stuff! - Michael
 def runGame():
   global points
   global usedLetters
   global word
   global displayWord
-  gallows()
+  hangman()
   display()
   for i in range(len(usedLetters)):
     print(str(i+1) + "." + (usedLetters[i]))
   guess()
   if points == 6:
     print("the word was: "+ word)
-    gallows()
+    hangman()
     failGame()
   else:
       runGame()
