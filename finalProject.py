@@ -11,7 +11,6 @@ displayWord=""
 def restart():
   global word
   global wordList
-  global points
   global usedLetters
   word = random.choice(wordList)
   points = 0
