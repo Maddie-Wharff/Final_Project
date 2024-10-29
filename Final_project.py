@@ -1,26 +1,21 @@
 # Hangman, by Elora, Maddie, Cephas, and Michael
-        
+
 # Pick a word/ start the game - Michael
 import random
-wordlist = ["camel", "pizza", "turkey", "moon", "dream", "cat", "sweet", "tooth", "company","baboon", "gym", "belief", "leaf", "beef", "the", "dog", "in" , "fox"]
+wordlist = ["camel", "pizza", "turkey", "moon", "dream", "cat", "sweet", "tooth", "company","baboon", "gym", "belief", "leaf", "beef", "jump", "dog", "play" , "fox", "umbrella", "chair", "cooking", "night", "hungry", "orange", "ghost", "people", "pumpkin", "holiday", "phone", "joke"]
 word = ""
 wordGuess = ""
 points = 0
-def gameStart():
-        global wordlist
-        global word
-        global wordGuess
-        score = 0
-        wordlist = ["camel", "pizza", "turkey", "moon", "dream", "cat", "sweet", "tooth", "company","baboon", "gym", "belief", "leaf", "beef", "the", "dog", "in" , "fox"]
-        word = random.choice(wordlist)
-        wordGuess = ""
-        game()
 
+def ask():
 
-# Let them pick a letter - All
-guess = input("Give me a letter: \n")
-
-# If they were wrong print a part of the man - Elora, Cephas
+        guess = input("give me a letter:\n")
+        if guess in word:
+                      print("Correct!")
+        else:
+          print("Incorrect :(")
+          points =+ 1
+                #TY
 def hangman():
         global points
         if points == 0:
@@ -46,16 +41,34 @@ def hangman():
         elif points ==10:
                 print("\n-----\n|   |\n|   0\n| /-+-\ \n|   |\n|   |\n|  |  |\n|  |  |\n|\n-------")
 
+def game():
+        hangman()
+        ask()
+        gameEnd()
+
+def gameStart():
+        global wordlist
+        global word
+        global wordGuess
+        score = 0
+        wordlist = ["camel", "pizza", "turkey", "moon", "dream", "cat", "sweet", "tooth", "company","baboon", "gym", "belief", "leaf", "beef", "jump", "dog", "play" , "fox", "umbrella", "chair", "cooking", "night", "hungry", "orange", "ghost", "people", "pumpkin", "holiday", "phone", "joke"]
+        word = random.choice(wordlist)
+        wordGuess = ""
+        game()
+        #sounds good
+#I am going to make another p[age for the code I used before ok!
+for letter in word:
+        print("_")
+
+# Let them pick a letter - All
+
+# If they were wrong print a part of the man - Elora, Cephas
+
+
 
 # Check if letter is in word - Maddie    
-if guess in word:
-        print("Correct!")
-else:
-        print("Incorrect :(")
-        points = points + 1
-        hangman()
-        
 
+        
 # End the game - Michael
 def gameEnd():
         if wordGuess == word:
@@ -70,4 +83,8 @@ def gameEnd():
                         gameStart()
                 else:
                         gameEnd
-        game()
+
+while true:
+        gameStart()
+
+ 
