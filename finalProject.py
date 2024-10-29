@@ -7,7 +7,7 @@ word = ""
 points = 0
 usedLetters = []
 displayWord=""
-#function to set everything to 0 - Cephas
+#function to set everything to 0 - Cephas & Michael
 def restart():
   global word
   global wordList
@@ -43,7 +43,7 @@ def guess():
   if choice not in word:
     global points
     points += 1
-#make the gallows - elora
+#make the gallows - Elora
 def gallows():
   if points == 0:
     print("_______")
@@ -94,7 +94,7 @@ def gallows():
     print("/ \\  |")
     print("      |")
     print("---------")
-#function blanks for loop that checks to see if each letter in the word is in our guessed letters list if in list display it, if not display an underscore - Maddie & Michael
+#function to replace letters with blanks - Maddie & Michael
 def display():
   displayWord=""
   for x in word:
@@ -105,7 +105,7 @@ def display():
   print(displayWord)
   if displayWord == word:
     winGame()
-#function to run game.-all \\\ call every function plus-all \\\some extra stuff! - michael
+#function to run game.-all \\\ call every function-all \\\plus some extra stuff! - Michael
 def runGame():
   global points
   global usedLetters
